@@ -38,6 +38,9 @@ public class BanIPFilter implements Filter {
         banned_ips.clear();
         banned_ips_notified.clear();
         banned_ips.addAll(core.getIPBans());
+
+        /* custom ips */
+        banned_ips.addAll(CustomBanIPFilter.getCustomIPs());
     }
 
     /* Return true if address is banned */
